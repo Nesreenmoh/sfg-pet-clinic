@@ -1,4 +1,4 @@
-package com.capgemin.sfg.models;
+package com.capgemini.models;
 
 
 import java.time.LocalDate;
