@@ -2,9 +2,10 @@ package com.capgemini.services.map;
 
 import com.capgemini.models.Pet;
 import com.capgemini.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Pet findById(Long id) {

@@ -4,8 +4,6 @@ import com.capgemini.models.Owner;
 import com.capgemini.models.Vet;
 import com.capgemini.services.OwnerService;
 import com.capgemini.services.VetService;
-import com.capgemini.services.map.OwnerServiceMap;
-import com.capgemini.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +13,10 @@ public class DataLoader implements CommandLineRunner {
    private final OwnerService ownerService;
    private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

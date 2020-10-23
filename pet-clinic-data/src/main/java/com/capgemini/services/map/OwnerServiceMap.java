@@ -2,9 +2,11 @@ package com.capgemini.services.map;
 
 import com.capgemini.models.Owner;
 import com.capgemini.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 
