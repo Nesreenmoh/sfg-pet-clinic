@@ -22,23 +22,13 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.session</groupId>
-			<artifactId>spring-session-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derby</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-	</dependencies>
 
+	</dependencies>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -86,12 +76,4 @@
 
 		</pluginManagement>
 	</build>
-
-	<scm>
-		<url>scm:git@github.com:Nesreenmoh/sfg-pet-clinic.git</url>
-		<connection>scm:git@github.com:Nesreenmoh/sfg-pet-clinic.git</connection>
-		<developerConnection>scm:git@github.com:Nesreenmoh/sfg-pet-clinic.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
-
 </project>

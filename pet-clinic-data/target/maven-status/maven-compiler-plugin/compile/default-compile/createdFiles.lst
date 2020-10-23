@@ -1,5 +1,5 @@
-com\capgemini\models\Owner.class
 com\capgemini\models\PetType.class
-com\capgemini\models\Vet.class
 com\capgemini\models\Person.class
+com\capgemini\models\Owner.class
+com\capgemini\models\Vet.class
 com\capgemini\models\Pet.class
