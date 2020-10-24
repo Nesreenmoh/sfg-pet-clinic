@@ -1,5 +1,14 @@
+com\capgemini\services\CrudService.class
+com\capgemini\services\map\PetServiceMap.class
+com\capgemini\services\VetService.class
+com\capgemini\models\BaseEntity.class
 com\capgemini\models\PetType.class
+com\capgemini\services\PetService.class
 com\capgemini\models\Person.class
+com\capgemini\services\map\VetServiceMap.class
+com\capgemini\services\OwnerService.class
+com\capgemini\services\map\OwnerServiceMap.class
 com\capgemini\models\Owner.class
 com\capgemini\models\Vet.class
 com\capgemini\models\Pet.class
+com\capgemini\services\map\AbstractMapService.class
