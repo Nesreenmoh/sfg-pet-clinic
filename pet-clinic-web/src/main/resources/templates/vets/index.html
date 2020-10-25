@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Vets Index Page</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+<head th:replace="fragments/layout :: head"></head>
 <body>
+<nav th:replace="fragments/layout :: navigation"></nav>
  <div class="container mt-3">
      <h3 th:text="'Vets Index Page'" class="text-center font-weight-bold"> Vets Index </h3>
      <table class="table table-hover table-bordered">
