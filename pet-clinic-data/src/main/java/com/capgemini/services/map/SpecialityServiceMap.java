@@ -1,13 +1,13 @@
 package com.capgemini.services.map;
 
 import com.capgemini.models.Speciality;
-import com.capgemini.services.SpecialitiesService;
+import com.capgemini.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityServiceMap  extends AbstractMapService<Speciality, Long>implements SpecialitiesService {
+public class SpecialityServiceMap  extends AbstractMapService<Speciality, Long>implements SpecialityService {
     @Override
     public Speciality findById(Long id) {
         return super.findById(id);
