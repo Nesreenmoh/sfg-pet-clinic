@@ -5,11 +5,13 @@ import com.capgemini.models.Pet;
 import com.capgemini.services.OwnerService;
 import com.capgemini.services.PetService;
 import com.capgemini.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
 
