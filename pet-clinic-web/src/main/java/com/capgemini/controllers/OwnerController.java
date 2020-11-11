@@ -14,7 +14,6 @@ public class OwnerController {
 
     // constructor
 
-
     public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
@@ -24,5 +23,10 @@ public class OwnerController {
     public String ownerList(Model model){
         model.addAttribute("owners", ownerService.findAll());
         return "owner/index";
+    }
+
+    @RequestMapping("/find")
+    public String findOwner(){
+        return "owner/find";
     }
 }
