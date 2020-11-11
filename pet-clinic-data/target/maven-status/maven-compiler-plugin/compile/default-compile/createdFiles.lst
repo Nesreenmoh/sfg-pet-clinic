@@ -9,11 +9,11 @@ com\capgemini\models\PetType.class
 com\capgemini\models\Visit$VisitBuilder.class
 com\capgemini\services\PetService.class
 com\capgemini\models\Owner$OwnerBuilder.class
+com\capgemini\services\springdatajpa\OwnerSDJpaService.class
 com\capgemini\services\map\VisitMapService.class
 com\capgemini\models\Person.class
 com\capgemini\repositories\VisitRepository.class
 com\capgemini\models\Visit.class
-com\capgemini\services\springdatajpa\OwnerSDataJpaService.class
 com\capgemini\models\Owner.class
 com\capgemini\models\Vet.class
 com\capgemini\services\map\AbstractMapService.class
