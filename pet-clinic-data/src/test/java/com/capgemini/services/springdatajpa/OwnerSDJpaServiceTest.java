@@ -4,7 +4,6 @@ import com.capgemini.models.Owner;
 import com.capgemini.repositories.OwnerRepository;
 import com.capgemini.repositories.PetRepository;
 import com.capgemini.repositories.PetTypeRepository;
-import javafx.scene.effect.SepiaTone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
