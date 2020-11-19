@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -87,6 +88,22 @@ class OwnerControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owner/1"));
 
+        verify(ownerService,times(1)).findAllByLastNameContaining(anyString());
+    }
+
+    // test return null results
+
+    @Test
+    void findOwnerReturnEmpty() throws Exception {
+        List<Owner> emptyList = new ArrayList<>();
+        // the service will return null
+        when(ownerService.findAllByLastNameContaining(anyString())).thenReturn(emptyList);
+
+        mockMvc.perform(get("/owner").param("lastName",""))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owner/findowner"));
+
+        assertEquals(emptyList.size(), 0);
         verify(ownerService,times(1)).findAllByLastNameContaining(anyString());
     }
 

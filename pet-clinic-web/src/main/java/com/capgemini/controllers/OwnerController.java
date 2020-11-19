@@ -49,7 +49,6 @@ public class OwnerController {
 
         if (results.isEmpty()) {
             bindingResult.rejectValue("lastName", "Sorry Not Found", "Sorry Not Found");
-            System.out.println("result "+ results.size());
             return "owner/findowner";
 
         } else if (results.size() == 1) {
