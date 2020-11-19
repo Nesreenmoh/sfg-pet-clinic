@@ -4,8 +4,8 @@
 <body>
 <nav th:replace="fragments/layout :: navigation"></nav>
  <div class="container mt-3">
-     <h2>Owner</h2>
-     <form th:object="${owner}" class="form-horizontal" id="add-owner-form" method="post">
+     <h2 class="text-center" > Add Owner</h2>
+     <form th:object="${owner}" class="form-horizontal m-2" id="add-owner-form" method="post">
          <div class="form-group has-feedback">
              <input
                      th:replace="~{fragments/inputField :: input ('First Name', 'firstName', 'text')}" />
@@ -22,7 +22,7 @@
              <div class="col-sm-offset-2 col-sm-10">
                  <button
                          th:with="text=${owner['new']} ? 'Add Owner' : 'Update Owner'"
-                         class="btn btn-default" type="submit" th:text="${text}">Add
+                         class="btn btn-dark" type="submit" th:text="${text}">Add
                      Owner</button>
              </div>
          </div>
