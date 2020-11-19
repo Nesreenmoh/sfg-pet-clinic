@@ -6,8 +6,8 @@ import com.capgemini.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Profile("springdatajpa")
@@ -30,10 +30,11 @@ public class PetTypeSDJpaService implements PetTypeService {
     }
 
     @Override
-    public Set<PetType> findAll() {
-        Set<PetType> petTypes = new HashSet<>();
-        petTypeRepository.findAll().forEach(petTypes::add);
-        return petTypes;
+    public List<PetType> findAll() {
+        List<PetType> petTypes = new ArrayList<>();
+         petTypeRepository.findAll().forEach(petTypes::add);
+         return petTypes;
+
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.capgemini.services;
 
 
-import java.util.Set;
+import java.util.List;
 
 public interface CrudService<T,ID> {
 
@@ -9,7 +9,7 @@ public interface CrudService<T,ID> {
 
     T save(T t);
 
-    Set<T> findAll();
+    List<T> findAll();
 
     void deleteById(ID id);
 

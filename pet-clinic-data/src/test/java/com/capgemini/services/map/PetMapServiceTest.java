@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Set;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -47,7 +47,7 @@ class PetMapServiceTest {
 
     @Test
     void findAll() {
-        Set<Pet> pets = petMapService.findAll();
+        List<Pet> pets = petMapService.findAll();
         assertEquals(1,pets.size());
     }
 

@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -102,7 +103,7 @@ class OwnerSDJpaServiceTest {
 
         //when
         when(ownerRepository.findAll()).thenReturn(owners);
-        Set<Owner> returnedOwners = ownerSDJpaService.findAll();
+        List<Owner> returnedOwners = ownerSDJpaService.findAll();
 
         //then
         assertEquals(owners, returnedOwners);

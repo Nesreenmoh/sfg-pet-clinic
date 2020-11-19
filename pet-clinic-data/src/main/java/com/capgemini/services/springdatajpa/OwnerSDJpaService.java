@@ -8,8 +8,8 @@ import com.capgemini.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Profile("springdatajpa")
@@ -31,6 +31,12 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
+    public List<Owner> findAllByLastNameContaining(String lastName) {
+
+        return ownerRepository.findAllByLastNameContaining(lastName);
+    }
+
+    @Override
     public Owner findById(Long id) {
         return ownerRepository.findById(id).orElse(null);
     }
@@ -41,8 +47,8 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
-    public Set<Owner> findAll() {
-        Set<Owner> owners = new HashSet<>();
+    public List<Owner> findAll() {
+        List<Owner> owners = new ArrayList<>();
         ownerRepository.findAll().forEach(owners::add);
         return owners;
     }

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Set;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -50,7 +50,7 @@ class OwnerMapServiceTest {
 
     @Test
     void findAll() {
-        Set<Owner> owners = ownerMapService.findAll();
+        List<Owner> owners = ownerMapService.findAll();
         assertEquals(1, owners.size());
     }
 

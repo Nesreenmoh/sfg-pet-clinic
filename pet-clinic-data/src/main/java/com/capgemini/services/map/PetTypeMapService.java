@@ -6,7 +6,7 @@ import com.capgemini.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 @Profile({"default", "map"})
@@ -22,7 +22,7 @@ public class PetTypeMapService extends AbstractMapService<PetType, Long>implemen
     }
 
     @Override
-    public Set<PetType> findAll() {
+    public List<PetType> findAll() {
         return super.findAll();
     }
 

@@ -8,7 +8,7 @@ import com.capgemini.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.util.List;
 
 @Service
 @Profile({"default", "map"})
@@ -54,7 +54,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Set<Owner> findAll() {
+    public List<Owner> findAll() {
         return super.findAll();
     }
 
@@ -75,5 +75,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                 .filter(owner->owner.getLastName()
                         .equalsIgnoreCase(lastName))
                 .findFirst().orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameContaining(String lastName) {
+        return null;
     }
 }

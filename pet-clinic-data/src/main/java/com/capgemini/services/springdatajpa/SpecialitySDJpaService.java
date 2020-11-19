@@ -6,8 +6,8 @@ import com.capgemini.services.SpecialityService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Profile("springdatajpa")
@@ -30,8 +30,8 @@ public class SpecialitySDJpaService implements SpecialityService {
     }
 
     @Override
-    public Set<Speciality> findAll() {
-        Set<Speciality> specialities = new HashSet<>();
+    public List<Speciality> findAll() {
+        List<Speciality> specialities = new ArrayList<>();
         specialityRepository.findAll().forEach(specialities::add);
         return specialities;
     }

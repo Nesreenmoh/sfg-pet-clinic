@@ -7,8 +7,8 @@ import com.capgemini.services.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Profile("springdatajpa")
@@ -33,8 +33,8 @@ public class VetSDJpaService implements VetService {
     }
 
     @Override
-    public Set<Vet> findAll() {
-        Set<Vet> vetSet = new HashSet<>();
+    public List<Vet> findAll() {
+        List<Vet> vetSet = new ArrayList<>();
         vetRepository.findAll().forEach(vetSet::add);
         return vetSet;
     }
