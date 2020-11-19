@@ -86,7 +86,7 @@ class PetsControllerTest {
         when(petTypeService.findAll()).thenReturn(petTypes);
         when(petService.findById(anyLong())).thenReturn(Pet.builder().id(2L).build());
 
-        mockMvc.perform(get("/owner/1/pet/2/update"))
+        mockMvc.perform(get("/owner/1/pets/2/update"))
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("pet"))
                 .andExpect(view().name("PETS_CREATE_OR_UPDATE"));
@@ -104,7 +104,7 @@ class PetsControllerTest {
         when(ownerService.findById(anyLong())).thenReturn(owner1);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
-        mockMvc.perform(post("/owner/1/pet/2/update"))
+        mockMvc.perform(post("/owner/1/pets/2/update"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owner/1"));
 
