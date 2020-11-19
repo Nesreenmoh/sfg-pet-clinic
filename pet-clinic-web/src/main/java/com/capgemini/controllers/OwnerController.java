@@ -5,11 +5,9 @@ import com.capgemini.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -59,6 +57,7 @@ public class OwnerController {
             model.addAttribute("selections", results);
             return "owner/ownerslist";
         }
+
     }
 
 
@@ -67,5 +66,40 @@ public class OwnerController {
         ModelAndView modelAndView = new ModelAndView("owner/ownerdetails");
         modelAndView.addObject(ownerService.findById(ownerId));
         return modelAndView;
+    }
+
+
+    @GetMapping("/new")
+    public String initCreationForm(Model model){
+        model.addAttribute("owner", new Owner());
+        return "owner/creatorupdateownerform";
+    }
+
+    @PostMapping("/new")
+    public String addNewOwner(@ModelAttribute @Validated  Owner owner, Model model, BindingResult result){
+        if(result.hasErrors()) {
+            return "redirect:/owner/new";
+        }
+        Owner savedOwner= ownerService.save(owner);
+        return "redirect:/owner/"+ savedOwner.getId();
+    }
+
+    @GetMapping("/{ownerId}/edit")
+    public String updateOwnerForm(@PathVariable("ownerId") Long ownerId, Model model){
+        model.addAttribute("owner", ownerService.findById(ownerId));
+        return "owner/creatorupdateownerform";
+    }
+
+
+    @PostMapping("/{ownerId}/edit")
+    public String updateExistingOwner(@PathVariable("ownerId") Long ownerId,
+                                      @ModelAttribute @Validated  Owner owner,
+                                      Model model, BindingResult result){
+        if(result.hasErrors()) {
+            return "owner/creatorupdateownerform";
+        }
+        owner.setId(ownerId);
+        Owner savedOwner= ownerService.save(owner);
+        return "redirect:/owner/"+ savedOwner.getId();
     }
 }
