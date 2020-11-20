@@ -1,2 +1,4 @@
 com\capgemini\SfgPetClinicApplicationTest.class
+com\capgemini\controllers\VisitControllerTest.class
+com\capgemini\controllers\PetsControllerTest.class
 com\capgemini\controllers\OwnerControllerTest.class

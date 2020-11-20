@@ -1,5 +1,7 @@
 com\capgemini\controllers\OwnerController.class
+com\capgemini\formatter\PetTypeFormatter.class
 com\capgemini\controllers\VetController.class
+com\capgemini\controllers\VisitController.class
 com\capgemini\controllers\PetsController.class
 com\capgemini\SfgPetClinicApplication.class
 com\capgemini\controllers\IndexController.class

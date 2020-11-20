@@ -11,10 +11,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -36,7 +35,7 @@ class OwnerSDJpaServiceTest {
     @InjectMocks
     OwnerSDJpaService ownerSDJpaService;
 
-    Set<Owner> owners;
+    List<Owner> owners;
     Owner owner2;
 
     @BeforeEach
@@ -45,7 +44,7 @@ class OwnerSDJpaServiceTest {
         owner1.setId(3L);
         owner2 = new Owner();
         owner2.setId(4L);
-        owners = new HashSet<>();
+        owners = new ArrayList<>();
         owners.add(owner1);
         owners.add(owner2);
            }
