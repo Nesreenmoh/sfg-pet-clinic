@@ -6,20 +6,23 @@
 
  <div class="container mt-3">
      <h3 class="text-center">VETERINARIANS</h3>
-     <h3 th:text="'Vets Index Page'" class="text-center font-weight-bold"> Vets Index </h3>
+
+ 
      <table class="table table-hover table-bordered table-striped">
-         <thead class="bg-primary">
+         <thead class="bg-info">
          <tr class="text-center font-weight-bold">
              <th>ID</th>
-             <th>First Name</th>
-             <th>Last Name</th>
+             <th>Name</th>
+             <th>Specialities</th>
          </tr>
          </thead>
          <tbody>
          <tr th:each="vet:${vets}">
              <td th:text="${vet.id}">1</td>
-             <td th:text="${vet.firstName}">John</td>
-             <td th:text="${vet.lastName}">Mark</td>
+             <td th:text="${vet.firstName} + ' '+ ${vet.lastName} ">John</td>
+             <td> <span th:each="speciality : ${vet.specialities}"
+               th:text="${speciality.description + ' '}"/>
+                 <span th:if="${vet?.specialities?.size()==0}"> none </span></td>
          </tr>
          </tbody>
      </table>
