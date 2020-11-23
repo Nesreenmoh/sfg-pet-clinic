@@ -14,6 +14,8 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalDate;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
@@ -53,6 +55,7 @@ class VisitControllerTest {
         pet.setId(2L);
         visit = new Visit();
         visit.setId(1L);
+        visit.setDate(LocalDate.parse("2020-11-23"));
         owner1.getPets().add(pet);
         pet.getVisits().add(visit);
         visit.setPet(pet);
