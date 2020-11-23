@@ -94,19 +94,19 @@ class OwnerControllerTest {
         verify(ownerService,times(1)).findAllByLastNameContaining(anyString());
     }
 
-    // test return null results
+    // test if the last name does not find return all list
 
     @Test
     void findOwnerReturnEmpty() throws Exception {
-        List<Owner> emptyList = new ArrayList<>();
+//        List<Owner> emptyList = new ArrayList<>();
         // the service will return null
-        when(ownerService.findAllByLastNameContaining(anyString())).thenReturn(emptyList);
+        when(ownerService.findAllByLastNameContaining(anyString())).thenReturn(owners);
 
         mockMvc.perform(get("/owner").param("lastName",""))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owner/findowner"));
+                .andExpect(view().name("owner/ownerslist"));
 
-        assertEquals(emptyList.size(), 0);
+        assertEquals(owners.size(), 2);
         verify(ownerService,times(1)).findAllByLastNameContaining(anyString());
     }
 
